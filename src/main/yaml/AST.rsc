@@ -2,13 +2,15 @@ module AST
 
 import Syntax;
 
-data Document
+data DocumentY 
              = document(list[Block] blocks, list[str] dlms)
              ;
 
 data Block = block(MappingBlock mb);
 
-data MappingBlock = mappingBlock(str id, list[str] dlms, list[Values] values);
+data MappingBlock = mappingBlockWBlock(str id, list[str] dlms, list[Block] blocks)
+                  | mappingBlock(str id, list[str], Values values)
+                  ;
 
 data Values = values(list[Value] vals);
 
@@ -19,10 +21,13 @@ data Value
           | numberVal(Number numb)
           ;
 
-data SequenceValue = sequenceValue(Value sqv);
+data SequenceValue = sequenceValue(Value sqv)
+                   | sequenceBlock(list[Block] blk)
+                   ;
 
 data QuotedValue = quotedValue(str quotedVal);
 
 data PlainValue = plainValue(str plainV);
 
 data Number = number(int number);
+
