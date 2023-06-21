@@ -2,7 +2,7 @@ module Syntax
 
 extend Lexical;
 
-start syntax Document = document: {Block DLM}+ DLM? | Empty;
+start syntax Document = document: {Block DLM}+ DLM? | empty: Empty;
 syntax Empty =;
 
 // Block
