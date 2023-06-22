@@ -11,8 +11,10 @@ extend Lexical;
 // syntax MappingBlock = mappingBlockWBlock: Id ":" DLM? Block+
 //                     | mappingBlock: Id ":" DLM? Values
                     // ;
+    
+
 syntax Maps =   scalar: Node !sequence node ":" Value !sequenceVal  val DLM?
-                     | scalarmappingBlock: Node !sequence node ":" DLM {SequenceValue !sequenceBlock DLM}+ sequence DLM?
+                     | scalarmappingBlock: Node !sequence node ":" DLM  {SequenceValue !sequenceBlock DLM}+ sequence DLM?
                     ;
 
 // Values
