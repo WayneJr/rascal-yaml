@@ -24,3 +24,4 @@ lexical Whitespace
 lexical Comment = @lineComment @category="Comment" "#" ![\n\r]* $;
 
 lexical DLM = "\n"+;
+

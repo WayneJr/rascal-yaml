@@ -1,5 +1,3 @@
 test:
-  hello
-test:
-  - sss: how
-  - sad: synt
+ - hello 
+   
