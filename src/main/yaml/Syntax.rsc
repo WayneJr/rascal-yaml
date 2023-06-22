@@ -2,43 +2,40 @@ module Syntax
 
 extend Lexical;
 
-// start syntax Document = document: {Block DLM}+ DLM? | empty: Empty;
-// syntax Empty =;
+start syntax Document = document: {Block DLM}+ DLM? | empty: Empty;
+syntax Empty =;
 
-// Block
-// syntax Block = block: MappingBlock;
+// blocks
+syntax Block = MappingBlock | SequenceBlock;
 
-// syntax MappingBlock = mappingBlockWBlock: Id ":" DLM? Block+
-//                     | mappingBlock: Id ":" DLM? Values
-                    // ;
+syntax MappingBlock = mappingBlockWBlock: Id ":" DLM? Block+
+                    | mappingBlock: Id ":" DLM? Values
+                    ;
     
 
-syntax Maps =   scalar: Node !sequence node ":" Value !sequenceVal  val DLM?
-                     | scalarmappingBlock: Node !sequence node ":" DLM  {SequenceValue !sequenceBlock DLM}+ sequence DLM?
-                    ;
+// syntax Maps =   scalar: Node !sequence node ":" Value !sequenceVal  val DLM?
+//                      | scalarmappingBlock: Node !sequence node ":" DLM  {SequenceValue !sequenceBlock DLM}+ sequence DLM?
+//                     ;
 
-// Values
+syntax SequenceBlock = "- " Block;
+
+// values
 syntax Values = values: {Value DLM}+;
 
 syntax Value
             = sequenceVal: SequenceValue
-            | quotedVal: QuotedValue
-            | plainVal: PlainValue
+            | quotedVal: QuotedScalar
+            | plainVal: PlainScalar
             | numberVal: Number
             ;
 
-start syntax Node
-          = sequence:Sequence
-          | values :Value !numberVal !sequenceVal value DLM?
-          | mapping : Maps
-          ;
-syntax Sequence="- " {Node DLM}+ node;
+
 syntax SequenceValue = sequenceValue: "- " Value
-                    //  | sequenceBlock: "- " Block+
+                    //  | sequenceBlock: "- " Block
                      ;
 
-syntax QuotedValue = quotedValue: String;
+syntax QuotedScalar = quotedScalar: String;
 
-syntax PlainValue = plainValue: Id;
+syntax PlainScalar = plainScalar: Id;
 
 syntax Number = number: Integer;
