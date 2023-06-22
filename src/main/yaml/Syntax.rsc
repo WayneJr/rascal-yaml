@@ -5,7 +5,9 @@ extend Lexical;
 start syntax Document = document: {Block !sequenceBlock DLM}+ DLM? | Empty;
 syntax Empty =;
 // blocks
-syntax Block = MappingBlock | SequenceBlock;
+syntax Block = mapBlock: MappingBlock 
+             | seqBlock: SequenceBlock
+             ;
 
 syntax MappingBlock = mappingBlockWBlock: Id ":" DLM? Block+
                     | mappingBlock: Id ":" DLM? Values
