@@ -5,29 +5,32 @@ extend Lexical;
 start syntax Document = document: {Block DLM}+ DLM? | Empty;
 syntax Empty =;
 
-// Block
-syntax Block = block: MappingBlock;
+// blocks
+syntax Block = MappingBlock | SequenceBlock;
 
 syntax MappingBlock = mappingBlockWBlock: Id ":" DLM? Block+
                     | mappingBlock: Id ":" DLM? Values
                     ;
 
-// Values
+syntax SequenceBlock = "- " Block;
+
+// values
 syntax Values = values: {Value DLM}+;
 
 syntax Value
             = sequenceVal: SequenceValue
-            | quotedVal: QuotedValue
-            | plainVal: PlainValue
+            | quotedVal: QuotedScalar
+            | plainVal: PlainScalar
             | numberVal: Number
             ;
 
+
 syntax SequenceValue = sequenceValue: "- " Value
-                     | sequenceBlock: "- " Block+
+                    //  | sequenceBlock: "- " Block
                      ;
 
-syntax QuotedValue = quotedValue: String;
+syntax QuotedScalar = quotedScalar: String;
 
-syntax PlainValue = plainValue: Id;
+syntax PlainScalar = plainScalar: Id;
 
 syntax Number = number: Integer;
