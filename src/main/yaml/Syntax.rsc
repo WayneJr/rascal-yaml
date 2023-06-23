@@ -11,7 +11,7 @@ syntax Block = mapBlock: MappingBlock
 
 syntax MappingBlock = mappingBlockWBlock: Id ":" DLM? Block+
                     | mappingBlock: Id ":" DLM? Values
-                    | mappingBlockWType: Id "@" Type ":" DLM? Value
+                    | mappingBlockWType: Id "@" TypedValue
                     ;
 
 syntax SequenceBlock = sequenceBlock: "- " Block;
@@ -42,3 +42,9 @@ syntax Type
             | string: "string"
             | boolean: "boolean"
             ;
+
+syntax TypedValue
+           = integer: "integer:" Value !sequenceVal !quotedVal !plainVal
+           | string : "string:" Value !sequenceVal !numberVal 
+           | boolean: "boolean:"  ("true"|"false")
+           ;
