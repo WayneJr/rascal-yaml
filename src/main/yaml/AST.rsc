@@ -12,7 +12,8 @@ data Block = mapBlock(MappingBlock mb)
 
 data MappingBlock = mappingBlockWBlock(str id, list[str] dlms, list[Block] blocks)
                   | mappingBlock(str id, list[str], Values values)
-                  | mappingBlockWType(str id, str typeName, list[str] dlms, Value val)
+                //   | mappingBlockWType(str id, str typeName, list[str] dlms, Value val)
+                  | mappingBlockWType(str id, TypedValue  val)
                   ;
 
 data SequenceBlock = sequenceBlock(Block blk);
@@ -40,4 +41,9 @@ data Type
          = integer()
          | string()
          | boolean()
+         ;
+data TypedValue 
+         = integer( int )
+         | string(Value val)
+         | boolean(bool)
          ;
