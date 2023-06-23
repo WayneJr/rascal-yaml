@@ -25,6 +25,7 @@ data Value
           | quotedVal(QuotedScalar qv)
           | plainVal(PlainScalar pv)
           | numberVal(Number numb)
+          | time(Timestamp)
           ;
 
 data SequenceValue = sequenceValue(Value sqv)
@@ -36,6 +37,7 @@ data QuotedScalar = quotedScalar(str quotedVal);
 data PlainScalar = plainScalar(str plainV);
 
 data Number = number(int number);
+data Timestamp = Time(Unit unit1, Unit unit2, Unit unit3, Unit unit4, Unit unit5, Unit unit6);
 
 data Type 
          = integer()

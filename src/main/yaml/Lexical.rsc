@@ -2,7 +2,7 @@ module Lexical
 
 lexical Id = ([a-z A-Z][a-z A-Z 0-9_\-]* !>> [a-z A-Z 0-9 _\-]);
 lexical Integer = [0-9] !<< [0-9]+ !>> [0-9];
-
+lexical Unit =[0-9];
 lexical String = [\"] String_Char* [\"];
 lexical String_Char  = ![\\ \" \n] | "\\" [\\ \"];
 

@@ -29,6 +29,7 @@ syntax Value
             | quotedVal: QuotedScalar
             | plainVal: PlainScalar
             | numberVal: Number
+            | time : Timestamp
             ;
 
 
@@ -42,14 +43,17 @@ syntax PlainScalar = plainScalar: Id;
 
 syntax Number = number: Integer;
 
+syntax Timestamp = Unit Unit ":" Unit Unit ":" Unit Unit ;
 syntax Type 
             = integer: "integer"
             | string: "string"
             | boolean: "boolean"
+            
             ;
 
 syntax TypedValue
            = integer: "integer:" Value !sequenceVal !quotedVal !plainVal
            | string : "string:" Value !sequenceVal !numberVal 
            | boolean: "boolean:"  ("true"|"false")
+           
            ;
