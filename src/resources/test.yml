@@ -1,6 +1,6 @@
-test: 
-  - hello
-  - hi
-tes:
-  name: kachi
-  name: kachi
+test:
+  hello
+test:
+  - sss: how
+  - sad: synt
+ married@boolean: false
