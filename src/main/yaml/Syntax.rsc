@@ -2,16 +2,16 @@ module Syntax
 
 extend Lexical;
 
-start syntax Document = document: {Block !sequenceBlock DLM}+ DLM? | Empty;
+start syntax Document = document: {Block!sequenceBlock!mappingToBlock DLM}+ DLM? | Empty;
 syntax Empty =;
 // blocks
-syntax Block = mapBlock: MappingBlock 
-             | seqBlock: SequenceBlock
+syntax Block = mappingBlock: MappingBlock 
+             | blockSequence: SequenceBlock
              ;
 
-syntax MappingBlock = mappingBlockWBlock: Id ":" DLM? Block+
-                    | mappingBlock: Id ":" DLM? Values
-                    | mappingBlockWType: Id "@" Type ":" DLM? Value
+syntax MappingBlock = mappingToBlock: Id ":" DLM? Block
+                    | mappingToValue: Id ":" DLM? Values
+                    | mappingToValueWithType: Id "@" Type ":" DLM? Value
                     ;
 
 syntax SequenceBlock = sequenceBlock: "- " Block;
@@ -20,10 +20,10 @@ syntax SequenceBlock = sequenceBlock: "- " Block;
 syntax Values = values: {Value DLM}+;
 
 syntax Value
-            = sequenceVal: SequenceValue
-            | quotedVal: QuotedScalar
-            | plainVal: PlainScalar
-            | numberVal: Number
+            = valueSequence: SequenceValue
+            | quotedValue: QuotedScalar
+            | plainValue: PlainScalar
+            | numberValue: Number
             ;
 
 
