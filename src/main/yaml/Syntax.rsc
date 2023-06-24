@@ -30,6 +30,7 @@ syntax Value
             | plainVal: PlainScalar
             | numberVal: Number
             | time : Timestamp
+            | date:Date
             ;
 
 
@@ -57,3 +58,9 @@ syntax TypedValue
            | boolean: "boolean:"  ("true"|"false")
            
            ;
+
+syntax Year = Unit Unit Unit Unit;
+syntax Month = Unit Unit ;
+syntax Day = Unit Unit;
+
+syntax Date= Year "-" Month "-" Day;

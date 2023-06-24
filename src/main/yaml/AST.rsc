@@ -1,6 +1,8 @@
 module AST
 
+import DateTime;
 import Syntax;
+
 
 data Document
              = document(list[Block] blocks, list[str] dlms)
@@ -26,6 +28,7 @@ data Value
           | plainVal(PlainScalar pv)
           | numberVal(Number numb)
           | time(Timestamp)
+          | date(Date)
           ;
 
 data SequenceValue = sequenceValue(Value sqv)
@@ -33,6 +36,12 @@ data SequenceValue = sequenceValue(Value sqv)
                    ;
 
 data QuotedScalar = quotedScalar(str quotedVal);
+
+datetime Date = createDate(Year,Month,Day);
+
+int Year ;
+int Month ;
+int Day ;
 
 data PlainScalar = plainScalar(str plainV);
 
