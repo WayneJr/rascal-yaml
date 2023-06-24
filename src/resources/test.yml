@@ -1,5 +1,6 @@
-test:
-  hello
-test:
-  - sss: how
-  - sad: synt
+test: "hello"
+another: 
+  - run : "world"
+  - second: 
+    - foo : "3"
+- play : 4
