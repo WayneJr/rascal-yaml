@@ -1,16 +1,18 @@
 module parser
 import ParseTree;
 import Syntax;
+// import AST;
 import IO;
 
-public Document parseDoc(){
-    str doc = readFile(|project://rascal-yaml/src/resources/test.yml|) ;
-    // println(doc);
-    return parse(#Document , doc);
-}
+str doc = readFile(|project://rascal-yaml/src/resources/test.yml|) ;
+public Tree parseDoc(str dat)= parse(#Document , dat);
+
 
 void main(){
-    Document result = parseDoc();
-    println(result);
+    implode(#Document,parseDoc(doc));
 }
 
+// import parser;
+// import AST;
+// import ParseTree;
+// implode(#Document,parseDoc(readFile(doc)));

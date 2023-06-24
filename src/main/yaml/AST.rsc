@@ -1,6 +1,6 @@
 module AST
 
-import DateTime;
+
 import Syntax;
 
 
@@ -27,26 +27,32 @@ data Value
           | quotedVal(QuotedScalar qv)
           | plainVal(PlainScalar pv)
           | numberVal(Number numb)
-          | time(Timestamp)
-          | date(Date)
+          | time(Timestamp t)
+          | date(Date d)
+          | boolean(Bool b)
           ;
 
 data SequenceValue = sequenceValue(Value sqv)
                   //  | sequenceBlock(list[Block] blk)
                    ;
 
+
 data QuotedScalar = quotedScalar(str quotedVal);
 
-datetime Date = createDate(Year,Month,Day);
+data Date = date(DatePart d);
 
-int Year ;
-int Month ;
-int Day ;
+// data Year = year(Unit e1, Unit e2,  Unit e3,  Unit e4 ) ;
+// int Month ;
+// int Day ;
 
 data PlainScalar = plainScalar(str plainV);
 
 data Number = number(int number);
-data Timestamp = Time(Unit unit1, Unit unit2, Unit unit3, Unit unit4, Unit unit5, Unit unit6);
+data Timestamp = time(JustTime t );
+data Bool
+        = True(str b1)
+        | False(str b2)
+        ;
 
 data Type 
          = integer()
@@ -54,7 +60,8 @@ data Type
          | boolean()
          ;
 data TypedValue 
-         = integer( int )
+         = integer( int number)
          | string(Value val)
-         | boolean(bool)
+         | boolean(Bool bv)
          ;
+         

@@ -1,7 +1,7 @@
-test:
-  hello
-test:
-  - sss: how
-  - sad: synt
-married@boolean: false
-time: 01:02:03
+test: "hello"
+isFine: false
+another: 
+  - run : "world"
+  - second: 
+    - foo : "3"
+  - play : 4

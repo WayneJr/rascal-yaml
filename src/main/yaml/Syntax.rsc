@@ -26,11 +26,12 @@ syntax Values = values: {Value DLM}+;
 
 syntax Value
             = sequenceVal: SequenceValue
-            | quotedVal: QuotedScalar
-            | plainVal: PlainScalar
+            | quotedVal: QuotedScalar 
+            | plainVal: PlainScalar 
             | numberVal: Number
-            | time : Timestamp
+            | time : JustTime
             | date:Date
+            | boolean:Bool
             ;
 
 
@@ -38,29 +39,25 @@ syntax SequenceValue = sequenceValue: "- " Value
                     //  | sequenceBlock: "- " Block
                      ;
 
-syntax QuotedScalar = quotedScalar: String;
+syntax QuotedScalar = quotedScalar: String \YamlKeyWords;
 
-syntax PlainScalar = plainScalar: Id;
+syntax PlainScalar = plainScalar: Id \YamlKeyWords;
 
 syntax Number = number: Integer;
 
-syntax Timestamp = Unit Unit ":" Unit Unit ":" Unit Unit ;
+syntax Timestamp =time: Unit Unit ":" Unit Unit ":" Unit Unit ;
 syntax Type 
             = integer: "integer"
             | string: "string"
-            | boolean: "boolean"
-            
+            | boolean: "boolean"           
             ;
 
 syntax TypedValue
            = integer: "integer:" Value !sequenceVal !quotedVal !plainVal
            | string : "string:" Value !sequenceVal !numberVal 
-           | boolean: "boolean:"  ("true"|"false")
-           
+           | boolean: "boolean:"  Bool
            ;
 
-syntax Year = Unit Unit Unit Unit;
-syntax Month = Unit Unit ;
-syntax Day = Unit Unit;
 
-syntax Date= Year "-" Month "-" Day;
+
+syntax Date= date: DatePart;
