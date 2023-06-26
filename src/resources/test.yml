@@ -1,7 +1,6 @@
-test: "hello"
-isFine@boolean: false
+test@string: "hello"
 another: 
   - run : "world"
   - second: 
     - foo : "3"
-    - play: 25:55:33
+  - play : 4

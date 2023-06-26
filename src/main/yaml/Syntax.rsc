@@ -2,11 +2,11 @@ module Syntax
 
 extend Lexical;
 
-start syntax Document = document: {Block !sequenceBlock DLM}+ DLM? | Empty;
+start syntax Document = document: {Block!sequenceBlock!mappingToBlock DLM}+ DLM? | Empty;
 syntax Empty =;
 // blocks
-syntax Block = mapBlock: MappingBlock 
-             | seqBlock: SequenceBlock
+syntax Block = mappingBlock: MappingBlock 
+             | blockSequence: SequenceBlock
              ;
 
 syntax MappingBlock = mappingBlockWBlock: Id ":" DLM? Block+
