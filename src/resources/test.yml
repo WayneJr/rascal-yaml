@@ -4,3 +4,4 @@ another:
   - second: 
     - foo : "3"
   - play : 4
+  - play: 25:55:33
