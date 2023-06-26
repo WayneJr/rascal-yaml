@@ -27,7 +27,7 @@ data Value
           | quotedVal(QuotedScalar qv)
           | plainVal(PlainScalar pv)
           | numberVal(Number numb)
-          // | time(Timestamp t)
+          | time(JustTime t)
           | date(Date d)
           | boolean(Bool b)
           ;
@@ -47,11 +47,14 @@ data Date = date(DatePart d);
 data PlainScalar = plainScalar(str plainV);
 
 data Number = number(int number);
-data Timestamp = time(JustTime t );
+
 data Bool
         = True(str b1)
         | False(str b2)
         ;
+
+// data Timestamp= time(JustTime t);
+
 
 data Type 
          = integer()
@@ -63,4 +66,9 @@ data TypedValue
          | string(Value val)
          | boolean(Bool bv)
          ;
-         
+data JustTime
+         = ntz(str t1)
+         | tz(str t1 ,str t2)
+         ;
+// data TimePartNoTZ
+//          =tests(str t)  ;

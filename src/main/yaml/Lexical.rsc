@@ -26,8 +26,8 @@ lexical DatePart
 	| [0-9] [0-9] [0-9] [0-9] [0-1] [0-9] [0-3] [0-9] 
   ;
 
-  lexical TimePartNoTZ
-	= [0-2] [0-9] ":" [0-5] [0-9] ":" [0-5] [0-9] ([, .] [0-9] ([0-9] [0-9]?)?)? 
+lexical TimePartNoTZ
+	= tests: [0-2] [0-9] ":" [0-5] [0-9] ":" [0-5] [0-9]  
 	;
 lexical TimeZonePart
 	= [+ \-] [0-1] [0-9] ":" [0-5] [0-9] 
@@ -35,9 +35,9 @@ lexical TimeZonePart
 	| [+ \-] [0-1] [0-9] 
 	| [+ \-] [0-1] [0-9] [0-5] [0-9] 
 	;
-  lexical JustTime
-	=  TimePartNoTZ !>> [+\-] 
-	|  TimePartNoTZ TimeZonePart 
+lexical JustTime
+	=  ntz:TimePartNoTZ 
+	|  tz:TimePartNoTZ TimeZonePart 
 	;
 lexical Bool= True:"true"| False: "false" ;
 lexical Comment = @lineComment @category="Comment" "#" ![\n\r]* $;

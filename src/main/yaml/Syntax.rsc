@@ -29,7 +29,7 @@ syntax Value
             | quotedVal: QuotedScalar 
             | plainVal: PlainScalar 
             | numberVal: Number
-            // | time : JustTime
+            | time : JustTime 
             | date:Date
             | boolean:Bool
             ;
@@ -45,7 +45,7 @@ syntax PlainScalar = plainScalar: Id \YamlKeyWords;
 
 syntax Number = number: Integer;
 
-syntax Timestamp =time: Unit Unit ":" Unit Unit ":" Unit Unit ;
+
 syntax Type 
             = integer: "integer"
             | string: "string"
@@ -61,3 +61,5 @@ syntax TypedValue
 
 
 syntax Date= date: DatePart;
+ 
+	
