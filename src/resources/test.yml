@@ -1,6 +1,6 @@
-test: "hello"
+test@string: "hello"
 another: 
   - run : "world"
   - second: 
     - foo : "3"
-- play : 4
+  - play : 4

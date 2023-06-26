@@ -1,22 +1,20 @@
 document(
   [
     mappingBlock(
-      mappingToValue(
+      mappingToValueWithType(
         "test",
+        "string",
         [],
-        values(
-          [quotedValue(
-              quotedScalar(
-                "\"hello\"",
-                src=|project://rascal-yaml/src/resources/test.yml|(6,7,<1,6>,<1,13>),
-                comments=()),
-              src=|project://rascal-yaml/src/resources/test.yml|(6,7,<1,6>,<1,13>),
-              comments=())],
-          src=|project://rascal-yaml/src/resources/test.yml|(6,7,<1,6>,<1,13>),
+        quotedValue(
+          quotedScalar(
+            "\"hello\"",
+            src=|project://rascal-yaml/src/resources/test.yml|(13,7,<1,13>,<1,20>),
+            comments=()),
+          src=|project://rascal-yaml/src/resources/test.yml|(13,7,<1,13>,<1,20>),
           comments=()),
-        src=|project://rascal-yaml/src/resources/test.yml|(0,13,<1,0>,<1,13>),
+        src=|project://rascal-yaml/src/resources/test.yml|(0,20,<1,0>,<1,20>),
         comments=()),
-      src=|project://rascal-yaml/src/resources/test.yml|(0,13,<1,0>,<1,13>),
+      src=|project://rascal-yaml/src/resources/test.yml|(0,20,<1,0>,<1,20>),
       comments=()),
     mappingBlock(
       mappingToBlock(
@@ -32,23 +30,23 @@ document(
                   [quotedValue(
                       quotedScalar(
                         "\"world\"",
-                        src=|project://rascal-yaml/src/resources/test.yml|(34,7,<3,10>,<3,17>),
+                        src=|project://rascal-yaml/src/resources/test.yml|(41,7,<3,10>,<3,17>),
                         comments=()),
-                      src=|project://rascal-yaml/src/resources/test.yml|(34,7,<3,10>,<3,17>),
+                      src=|project://rascal-yaml/src/resources/test.yml|(41,7,<3,10>,<3,17>),
                       comments=())],
-                  src=|project://rascal-yaml/src/resources/test.yml|(34,7,<3,10>,<3,17>),
+                  src=|project://rascal-yaml/src/resources/test.yml|(41,7,<3,10>,<3,17>),
                   comments=()),
-                src=|project://rascal-yaml/src/resources/test.yml|(28,13,<3,4>,<3,17>),
+                src=|project://rascal-yaml/src/resources/test.yml|(35,13,<3,4>,<3,17>),
                 comments=()),
-              src=|project://rascal-yaml/src/resources/test.yml|(28,13,<3,4>,<3,17>),
+              src=|project://rascal-yaml/src/resources/test.yml|(35,13,<3,4>,<3,17>),
               comments=()),
-            src=|project://rascal-yaml/src/resources/test.yml|(26,15,<3,2>,<3,17>),
+            src=|project://rascal-yaml/src/resources/test.yml|(33,15,<3,2>,<3,17>),
             comments=()),
-          src=|project://rascal-yaml/src/resources/test.yml|(26,15,<3,2>,<3,17>),
+          src=|project://rascal-yaml/src/resources/test.yml|(33,15,<3,2>,<3,17>),
           comments=()),
-        src=|project://rascal-yaml/src/resources/test.yml|(14,27,<2,0>,<3,17>),
+        src=|project://rascal-yaml/src/resources/test.yml|(21,27,<2,0>,<3,17>),
         comments=()),
-      src=|project://rascal-yaml/src/resources/test.yml|(14,27,<2,0>,<3,17>),
+      src=|project://rascal-yaml/src/resources/test.yml|(21,27,<2,0>,<3,17>),
       comments=()),
     blockSequence(
       sequenceBlock(
@@ -66,27 +64,27 @@ document(
                       [quotedValue(
                           quotedScalar(
                             "\"3\"",
-                            src=|project://rascal-yaml/src/resources/test.yml|(67,3,<5,12>,<5,15>),
+                            src=|project://rascal-yaml/src/resources/test.yml|(74,3,<5,12>,<5,15>),
                             comments=()),
-                          src=|project://rascal-yaml/src/resources/test.yml|(67,3,<5,12>,<5,15>),
+                          src=|project://rascal-yaml/src/resources/test.yml|(74,3,<5,12>,<5,15>),
                           comments=())],
-                      src=|project://rascal-yaml/src/resources/test.yml|(67,3,<5,12>,<5,15>),
+                      src=|project://rascal-yaml/src/resources/test.yml|(74,3,<5,12>,<5,15>),
                       comments=()),
-                    src=|project://rascal-yaml/src/resources/test.yml|(61,9,<5,6>,<5,15>),
+                    src=|project://rascal-yaml/src/resources/test.yml|(68,9,<5,6>,<5,15>),
                     comments=()),
-                  src=|project://rascal-yaml/src/resources/test.yml|(61,9,<5,6>,<5,15>),
+                  src=|project://rascal-yaml/src/resources/test.yml|(68,9,<5,6>,<5,15>),
                   comments=()),
-                src=|project://rascal-yaml/src/resources/test.yml|(59,11,<5,4>,<5,15>),
+                src=|project://rascal-yaml/src/resources/test.yml|(66,11,<5,4>,<5,15>),
                 comments=()),
-              src=|project://rascal-yaml/src/resources/test.yml|(59,11,<5,4>,<5,15>),
+              src=|project://rascal-yaml/src/resources/test.yml|(66,11,<5,4>,<5,15>),
               comments=()),
-            src=|project://rascal-yaml/src/resources/test.yml|(46,24,<4,4>,<5,15>),
+            src=|project://rascal-yaml/src/resources/test.yml|(53,24,<4,4>,<5,15>),
             comments=()),
-          src=|project://rascal-yaml/src/resources/test.yml|(46,24,<4,4>,<5,15>),
+          src=|project://rascal-yaml/src/resources/test.yml|(53,24,<4,4>,<5,15>),
           comments=()),
-        src=|project://rascal-yaml/src/resources/test.yml|(44,26,<4,2>,<5,15>),
+        src=|project://rascal-yaml/src/resources/test.yml|(51,26,<4,2>,<5,15>),
         comments=()),
-      src=|project://rascal-yaml/src/resources/test.yml|(44,26,<4,2>,<5,15>),
+      src=|project://rascal-yaml/src/resources/test.yml|(51,26,<4,2>,<5,15>),
       comments=()),
     blockSequence(
       sequenceBlock(
@@ -98,21 +96,21 @@ document(
               [numberValue(
                   number(
                     4,
-                    src=|project://rascal-yaml/src/resources/test.yml|(80,1,<6,9>,<6,10>),
+                    src=|project://rascal-yaml/src/resources/test.yml|(89,1,<6,11>,<6,12>),
                     comments=()),
-                  src=|project://rascal-yaml/src/resources/test.yml|(80,1,<6,9>,<6,10>),
+                  src=|project://rascal-yaml/src/resources/test.yml|(89,1,<6,11>,<6,12>),
                   comments=())],
-              src=|project://rascal-yaml/src/resources/test.yml|(80,1,<6,9>,<6,10>),
+              src=|project://rascal-yaml/src/resources/test.yml|(89,1,<6,11>,<6,12>),
               comments=()),
-            src=|project://rascal-yaml/src/resources/test.yml|(73,8,<6,2>,<6,10>),
+            src=|project://rascal-yaml/src/resources/test.yml|(82,8,<6,4>,<6,12>),
             comments=()),
-          src=|project://rascal-yaml/src/resources/test.yml|(73,8,<6,2>,<6,10>),
+          src=|project://rascal-yaml/src/resources/test.yml|(82,8,<6,4>,<6,12>),
           comments=()),
-        src=|project://rascal-yaml/src/resources/test.yml|(71,10,<6,0>,<6,10>),
+        src=|project://rascal-yaml/src/resources/test.yml|(80,10,<6,2>,<6,12>),
         comments=()),
-      src=|project://rascal-yaml/src/resources/test.yml|(71,10,<6,0>,<6,10>),
+      src=|project://rascal-yaml/src/resources/test.yml|(80,10,<6,2>,<6,12>),
       comments=())
   ],
   [],
-  src=|project://rascal-yaml/src/resources/test.yml|(0,81,<1,0>,<6,10>),
+  src=|project://rascal-yaml/src/resources/test.yml|(0,90,<1,0>,<6,12>),
   comments=())
