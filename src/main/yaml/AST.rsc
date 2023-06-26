@@ -8,8 +8,8 @@ data Document
              = document(list[Block] blocks, list[str] dlms)
              ;
 
-data Block = mapBlock(MappingBlock mb)
-           | seqBlock(SequenceBlock sb)
+data Block = mappingBlock(MappingBlock mb)
+           | blockSequence(SequenceBlock sb)
            ;
 
 data MappingBlock = mappingBlockWBlock(str id, list[str] dlms, list[Block] blocks)
@@ -33,7 +33,6 @@ data Value
           ;
 
 data SequenceValue = sequenceValue(Value sqv)
-                  //  | sequenceBlock(list[Block] blk)
                    ;
 
 
