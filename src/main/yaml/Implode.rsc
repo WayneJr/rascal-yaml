@@ -11,4 +11,4 @@ public Document implode(Tree pt) = implode(#Document, pt);
 
 public Document load(loc l) = implode(#Document, parse(l));
 
-public void loadToFile(loc src, loc dest) = iprintToFile(dest, load(src));
+public void loadToFile(loc src) = iprintToFile(|project://rascal-yaml/src/resources/aterm.yml|, load(src));
