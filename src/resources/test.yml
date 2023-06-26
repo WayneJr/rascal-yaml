@@ -1,5 +1,4 @@
-test: "hello"
-isFine: false
+test@string: "hello"
 another: 
   - run : "world"
   - second: 
