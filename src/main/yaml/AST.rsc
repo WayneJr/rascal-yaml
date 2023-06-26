@@ -27,7 +27,7 @@ data Value
           | quotedVal(QuotedScalar qv)
           | plainVal(PlainScalar pv)
           | numberVal(Number numb)
-          | time(Timestamp t)
+          // | time(Timestamp t)
           | date(Date d)
           | boolean(Bool b)
           ;

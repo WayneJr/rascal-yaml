@@ -29,7 +29,7 @@ syntax Value
             | quotedVal: QuotedScalar 
             | plainVal: PlainScalar 
             | numberVal: Number
-            | time : JustTime
+            // | time : JustTime
             | date:Date
             | boolean:Bool
             ;
