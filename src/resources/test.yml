@@ -1,6 +1,13 @@
-test@string: "hello"
-another: 
-  - run : "world"
-  - second: 
-    - foo : "3"
-  - play : 4
+name: dbt_labs
+
+models:
+  dbt_labs:
+    events:
+
+
+      +enabled: true
+      +materialized: view
+      base:
+        +materialized: ephemeral
+
+
