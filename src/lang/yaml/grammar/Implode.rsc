@@ -1,8 +1,8 @@
-module Implode
+module lang::yaml::grammar::Implode
 
-extend AST;
+extend lang::yaml::grammar::AST;
 
-import Parse;
+import lang::yaml::grammar::Parse;
 import ParseTree;
 import IO;
 

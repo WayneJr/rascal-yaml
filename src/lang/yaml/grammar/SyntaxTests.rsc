@@ -1,6 +1,6 @@
-module SyntaxTests
+module lang::yaml::grammar::SyntaxTests
 
-extend Syntax;
+extend lang::yaml::grammar::Syntax;
 
 import IO;
 import ParseTree;
