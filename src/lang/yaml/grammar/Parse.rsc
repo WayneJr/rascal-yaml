@@ -1,11 +1,11 @@
-module Parse
+module lang::yaml::grammar::Parse
 
-extend Syntax;
+extend lang::yaml::grammar::Syntax;
 
 import ParseTree;
 
 // void parseYaml() {
-//   loc src = |project://rascal-test-project/src/resources/test.yml|;
+//   loc src = |project://rascal-yaml/src/resources/test.yml|;
 //   loc dest = |project://rascal-test-project/src/resources/aterm.yml|;
 //   try {
 //     Tree t = parse(#start[Document], src);

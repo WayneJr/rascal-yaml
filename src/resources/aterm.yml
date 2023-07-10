@@ -1,118 +1,80 @@
 document(
   [
     mappingBlock(
-      mappingToValue(
-        "version",
+      mappingBlock(
+        "hello",
         [],
         values(
-          [numberValue(
-              number(
-                2,
-                src=|project://rascal-yaml/src/resources/test.yml|(9,1,<1,9>,<1,10>),
+          [plainVal(
+              plainScalar(
+                "world",
+                src=|project://rascal-yaml/src/resources/test.yml|(7,5,<1,7>,<1,12>),
                 comments=()),
-              src=|project://rascal-yaml/src/resources/test.yml|(9,1,<1,9>,<1,10>),
+              src=|project://rascal-yaml/src/resources/test.yml|(7,5,<1,7>,<1,12>),
               comments=())],
-          src=|project://rascal-yaml/src/resources/test.yml|(9,1,<1,9>,<1,10>),
+          src=|project://rascal-yaml/src/resources/test.yml|(7,5,<1,7>,<1,12>),
           comments=()),
-        src=|project://rascal-yaml/src/resources/test.yml|(0,10,<1,0>,<1,10>),
+        src=|project://rascal-yaml/src/resources/test.yml|(0,12,<1,0>,<1,12>),
         comments=()),
-      src=|project://rascal-yaml/src/resources/test.yml|(0,10,<1,0>,<1,10>),
+      src=|project://rascal-yaml/src/resources/test.yml|(0,12,<1,0>,<1,12>),
       comments=()),
     mappingBlock(
-      mappingToBlock(
-        "models",
+      mappingBlockWBlock(
+        "geo",
         ["\n"],
-        blockSequence(
-          sequenceBlock(
-            mappingBlock(
-              mappingToValue(
-                "name",
-                [],
-                values(
-                  [plainValue(
-                      plainScalar(
-                        "base_events",
-                        src=|project://rascal-yaml/src/resources/test.yml|(30,11,<4,10>,<4,21>),
-                        comments=()),
-                      src=|project://rascal-yaml/src/resources/test.yml|(30,11,<4,10>,<4,21>),
-                      comments=())],
-                  src=|project://rascal-yaml/src/resources/test.yml|(30,11,<4,10>,<4,21>),
+        [blockSequence(
+            sequenceBlock(
+              mappingBlock(
+                mappingBlock(
+                  "hhh",
+                  [],
+                  values(
+                    [plainVal(
+                        plainScalar(
+                          "JJJ",
+                          src=|project://rascal-yaml/src/resources/test.yml|(27,3,<3,9>,<3,12>),
+                          comments=()),
+                        src=|project://rascal-yaml/src/resources/test.yml|(27,3,<3,9>,<3,12>),
+                        comments=())],
+                    src=|project://rascal-yaml/src/resources/test.yml|(27,3,<3,9>,<3,12>),
+                    comments=()),
+                  src=|project://rascal-yaml/src/resources/test.yml|(22,8,<3,4>,<3,12>),
                   comments=()),
-                src=|project://rascal-yaml/src/resources/test.yml|(24,17,<4,4>,<4,21>),
+                src=|project://rascal-yaml/src/resources/test.yml|(22,8,<3,4>,<3,12>),
                 comments=()),
-              src=|project://rascal-yaml/src/resources/test.yml|(24,17,<4,4>,<4,21>),
+              src=|project://rascal-yaml/src/resources/test.yml|(20,10,<3,2>,<3,12>),
               comments=()),
-            src=|project://rascal-yaml/src/resources/test.yml|(22,19,<4,2>,<4,21>),
-            comments=()),
-          src=|project://rascal-yaml/src/resources/test.yml|(22,19,<4,2>,<4,21>),
-          comments=()),
-        src=|project://rascal-yaml/src/resources/test.yml|(12,29,<3,0>,<4,21>),
+            src=|project://rascal-yaml/src/resources/test.yml|(20,10,<3,2>,<3,12>),
+            comments=())],
+        src=|project://rascal-yaml/src/resources/test.yml|(13,17,<2,0>,<3,12>),
         comments=()),
-      src=|project://rascal-yaml/src/resources/test.yml|(12,29,<3,0>,<4,21>),
+      src=|project://rascal-yaml/src/resources/test.yml|(13,17,<2,0>,<3,12>),
       comments=()),
-    mappingBlock(
-      mappingToBlock(
-        "config",
-        ["\n"],
+    blockSequence(
+      sequenceBlock(
         mappingBlock(
-          mappingToValue(
-            "materialized",
+          mappingBlock(
+            "iii",
             [],
             values(
-              [plainValue(
+              [plainVal(
                   plainScalar(
-                    "table",
-                    src=|project://rascal-yaml/src/resources/test.yml|(74,5,<6,20>,<6,25>),
+                    "ooo",
+                    src=|project://rascal-yaml/src/resources/test.yml|(40,3,<4,9>,<4,12>),
                     comments=()),
-                  src=|project://rascal-yaml/src/resources/test.yml|(74,5,<6,20>,<6,25>),
+                  src=|project://rascal-yaml/src/resources/test.yml|(40,3,<4,9>,<4,12>),
                   comments=())],
-              src=|project://rascal-yaml/src/resources/test.yml|(74,5,<6,20>,<6,25>),
+              src=|project://rascal-yaml/src/resources/test.yml|(40,3,<4,9>,<4,12>),
               comments=()),
-            src=|project://rascal-yaml/src/resources/test.yml|(60,19,<6,6>,<6,25>),
+            src=|project://rascal-yaml/src/resources/test.yml|(35,8,<4,4>,<4,12>),
             comments=()),
-          src=|project://rascal-yaml/src/resources/test.yml|(60,19,<6,6>,<6,25>),
+          src=|project://rascal-yaml/src/resources/test.yml|(35,8,<4,4>,<4,12>),
           comments=()),
-        src=|project://rascal-yaml/src/resources/test.yml|(46,33,<5,4>,<6,25>),
+        src=|project://rascal-yaml/src/resources/test.yml|(33,10,<4,2>,<4,12>),
         comments=()),
-      src=|project://rascal-yaml/src/resources/test.yml|(46,33,<5,4>,<6,25>),
-      comments=()),
-    mappingBlock(
-      mappingToValue(
-        "sort",
-        [],
-        values(
-          [plainValue(
-              plainScalar(
-                "event_time",
-                src=|project://rascal-yaml/src/resources/test.yml|(92,10,<7,12>,<7,22>),
-                comments=()),
-              src=|project://rascal-yaml/src/resources/test.yml|(92,10,<7,12>,<7,22>),
-              comments=())],
-          src=|project://rascal-yaml/src/resources/test.yml|(92,10,<7,12>,<7,22>),
-          comments=()),
-        src=|project://rascal-yaml/src/resources/test.yml|(86,16,<7,6>,<7,22>),
-        comments=()),
-      src=|project://rascal-yaml/src/resources/test.yml|(86,16,<7,6>,<7,22>),
-      comments=()),
-    mappingBlock(
-      mappingToValue(
-        "dist",
-        [],
-        values(
-          [plainValue(
-              plainScalar(
-                "event_id",
-                src=|project://rascal-yaml/src/resources/test.yml|(115,8,<8,12>,<8,20>),
-                comments=()),
-              src=|project://rascal-yaml/src/resources/test.yml|(115,8,<8,12>,<8,20>),
-              comments=())],
-          src=|project://rascal-yaml/src/resources/test.yml|(115,8,<8,12>,<8,20>),
-          comments=()),
-        src=|project://rascal-yaml/src/resources/test.yml|(109,14,<8,6>,<8,20>),
-        comments=()),
-      src=|project://rascal-yaml/src/resources/test.yml|(109,14,<8,6>,<8,20>),
+      src=|project://rascal-yaml/src/resources/test.yml|(33,10,<4,2>,<4,12>),
       comments=())
   ],
-  [],
-  src=|project://rascal-yaml/src/resources/test.yml|(0,123,<1,0>,<8,20>),
+  ["\n"],
+  src=|project://rascal-yaml/src/resources/test.yml|(0,44,<1,0>,<5,0>),
   comments=())

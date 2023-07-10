@@ -1,13 +1,1 @@
-name: dbt_labs
-
-models:
-  dbt_labs:
-    events:
-
-
-      +enabled: true
-      +materialized: view
-      base:
-        +materialized: ephemeral
-
-
+hello 
