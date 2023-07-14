@@ -25,35 +25,16 @@ str prettyAType(timeType()) = "time";
 
 // Mappings
 
-// void collect(current: /{Block DLM}+ DLM?, Collector c) {
-//   // c.define(current, blockId, current, def)
-//   c.enterScope(current);
-//     collect(block, c);
-//   c.leaveScope(current);
-// }
-
-void collect(current: /MappingBlock mp, Collector c) {
+void collect(current: <MappingBlock+ mp>, Collector c) {
+  // c.define(mp, mappingId(), current, noDefInfo());
   c.enterScope(current);
     collect(mp, c);
   c.leaveScope(current);
 }
 
-// void collect(current: (MappingBlock) `<Id name> @ <Type t> ":" <DLM? _> <Value val>`, Collector c) {
-//   c.define("<name>", mappingId(), current, defType(t));
-//   c.requireEqual(t, val, error(val, "Incorrect initialization, expected %t, found %t", t, val));
-//   // c.enterScope(current);
-//     collect(val, c);
-//   c.leaveScope(current);
-//   c.report(info(t, "<name> type is %t", t));
-// }
-
-void collect(current: (MappingBlock) `<Id name> @ <Type t> ":" <DLM? _> <Value val>`, Collector c) {
+void collect(current: (MappingBlock) `<Id name> @ <Type t> : <Value val>`, Collector c) {
   c.define("<name>", mappingId(), current, defType(t));
   c.requireEqual(t, val, error(val, "Incorrect initialization, expected %t, found %t", t, val));
-  // c.enterScope(current);
-  // collect(val, c);
-  // c.leaveScope(current);
-  c.report(info(t, "<name> type is %t", t));
   collect(t, val, c);
 }
 
@@ -62,17 +43,22 @@ void collect(current: (Value) `<Number _>`, Collector c) {
   c.fact(current, intType());
 }
 
+void collect(current: (Value) `<QuotedScalar _>`, Collector c) {
+  c.fact(current, stringType());
+}
+
 void collect(current: (Value) `<BooleanScalar _>`, Collector c) {
   c.fact(current, boolType());
 }
 
-void collect(current: (Value) `<QuotedScalar _>`, Collector c) {
-  c.fact(current, stringType);
+void collect(current: (Value) `<Date _>`, Collector c) {
+  c.fact(current, dateType());
 }
 
-// void collect(current: (Value) ``, Collector c) {
+void collect(current: (Value) `<Time _>`, Collector c) {
+  c.fact(current, timeType());
+}
 
-// }
 
 // Type Constraints
 
@@ -95,9 +81,6 @@ void collect(current: (Type) `date`, Collector c) {
 void collect(current: (Type) `time`, Collector c) {
   c.fact(current, timeType());
 }
-
-
-// str prettyAType(entityType(str name)) = "<name>"; 
 
 TModel yamlTModelForTree(Tree pt){
     return collectAndSolve(pt);

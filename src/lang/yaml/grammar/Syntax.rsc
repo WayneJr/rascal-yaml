@@ -4,21 +4,22 @@ extend lang::yaml::grammar::Lexical;
 
 start syntax Document = Values | MappingBlock+;
 
-syntax MappingBlock = //= mappingBlockWBlock: Id name ":" DLM? Block //{Block DLM !>> "\n"}+ DLM? !>> "\n"
+syntax MappingBlock= //= mappingBlockWBlock: Id name ":" DLM? Block //{Block DLM !>> "\n"}+ DLM? !>> "\n"
                      mappingBlock: Id name ":" Values vals
-                    | mappingToBlock: Id name ":" MappingBlocks
                     | mappingBlockWType: Id name "@" Type t ":" Value!sequenceVal val
-                    | sequenceMapping: "-" MappingBlock
                     // | mappingToBlock: Id name ":" MappingBlock+ mp
+                    | mappingToBlock: Id name ":" MappingBlock
+                    | mappingToBlocks: Id name ":" "{" MappingBlock+ "}"
+                    | sequenceMapping: "-" MappingBlock //nesting syntax
                     ;
 
 
-syntax MappingBlocks = MappingBlock
-                     > right conc: MappingBlock MappingBlocks
+syntax MappingBlocks = single: MappingBlock
+                     > right mappings: MappingBlock MappingBlocks
                      ;
     
-syntax Values = Value
-              > right Value Values
+syntax Values = singleVal: Value
+              > right mappingsVal: Value Values
               ;
 
 
