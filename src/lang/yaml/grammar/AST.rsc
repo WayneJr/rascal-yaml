@@ -5,25 +5,26 @@ import lang::yaml::grammar::Syntax;
 
 
 data Document
-             = document(list[Block] blocks, list[str] dlms)
+             =
+              mapb(MappingBlock mb)
              ;
 
-data Block = mappingBlock(MappingBlock mb)
-           | blockSequence(SequenceBlock sb)
-           ;
 
-data MappingBlock = mappingBlockWBlock(str id, list[str] dlms, list[Block] blocks)
-                  | mappingBlock(str id, list[str], Values values)
-                  | mappingBlockWType(str id, str typeName, list[str] dlms, Value val)
-                  // | mappingBlockWType(str id, TypedValue  val)
+
+data MappingBlock = mappingBlock(str id, Values)
+                  | mappingBlockWType(str id, str typeName, Value val)
+                  | mappingToBlock(str id, MappingBlock mb)
+                  | mappingToBlocks(str id , list[MappingBlock] mbs)
                   ;
+data MappingBlocks =
+                 single(MappingBlock mb)
+                 | mappings(MappingBlock mb,MappingBlocks mbs )
+                 ;
 
-data SequenceBlock = sequenceBlock(Block blk);
-
-data Values = values(list[Value] vals);
+data Values = singleVal(Value v)| mappingsVal( Value v,list[Value] vals);
 
 data Value
-          = sequenceVal(SequenceValue sv)
+          = sequenceVal(Value sv)
           | quotedVal(QuotedScalar qv)
           | plainVal(PlainScalar pv)
           | numberVal(Number numb)
@@ -56,13 +57,13 @@ data Date = date(DatePart d);
 // data Timestamp= time(JustTime t);
 
 
-data Type 
-         = integer()
-         | string()
-         | boolean()
-         | date()
-         | time()
-         ;
+// data Type 
+//          = integer()
+//          | string()
+//          | boolean()
+//          | date()
+//          | time()
+//          ;
 // data TypedValue 
 //          = integer( int number)
 //          | string(Value val)
