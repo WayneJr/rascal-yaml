@@ -2,7 +2,7 @@ module lang::yaml::grammar::Syntax
 
 extend lang::yaml::grammar::Lexical;
 
-start syntax Document =mapb: MappingBlock+ mbs;
+start syntax Document =val:Values|mapb: MappingBlock+;
 
 syntax MappingBlock= //= mappingBlockWBlock: Id name ":" DLM? Block //{Block DLM !>> "\n"}+ DLM? !>> "\n"
                      mappingBlock: Id name ":" Values vals
@@ -14,9 +14,9 @@ syntax MappingBlock= //= mappingBlockWBlock: Id name ":" DLM? Block //{Block DLM
                     ;
 
 
-syntax MappingBlocks = single: MappingBlock
-                     > right mappings: MappingBlock MappingBlocks
-                     ;
+// syntax MappingBlocks = single: MappingBlock
+//                      > right mappings: MappingBlock MappingBlocks
+//                      ;
     
 syntax Values = singleVal: Value
               > right mappingsVal: Value Values

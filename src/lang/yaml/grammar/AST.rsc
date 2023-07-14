@@ -4,22 +4,24 @@ module lang::yaml::grammar::AST
 import lang::yaml::grammar::Syntax;
 
 
-data Document
-             =
-              mapb(MappingBlock mb)
+data Document =
+              val(Values v)
+             |mapb(list[MappingBlock] mb)
              ;
 
 
 
-data MappingBlock = mappingBlock(str id, Values)
+data MappingBlock =
+                    mappingBlock(str id , Values vs)
                   | mappingBlockWType(str id, str typeName, Value val)
                   | mappingToBlock(str id, MappingBlock mb)
                   | mappingToBlocks(str id , list[MappingBlock] mbs)
+                  | sequenceMapping(MappingBlock sm)
                   ;
-data MappingBlocks =
-                 single(MappingBlock mb)
-                 | mappings(MappingBlock mb,MappingBlocks mbs )
-                 ;
+// data MappingBlocks =
+//                  single(MappingBlock mb)
+//                  | mappings(MappingBlock mb,MappingBlocks mbs )
+//                  ;
 
 data Values = singleVal(Value v)| mappingsVal( Value v,list[Value] vals);
 
