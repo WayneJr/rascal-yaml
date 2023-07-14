@@ -25,7 +25,7 @@ str prettyAType(timeType()) = "time";
 
 // Mappings
 
-void collect(current: <MappingBlock+ mp>, Collector c) {
+void collect(current: (Document) `<MappingBlock+ mp>`, Collector c) {
   // c.define(mp, mappingId(), current, noDefInfo());
   c.enterScope(current);
     collect(mp, c);
